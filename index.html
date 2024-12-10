@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do You Love Me?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 10%;
+      background-color: white;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .button-container {
+      margin-top: 40px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      transition: transform 0.2s ease;
+    }
+
+
+
+    #no-button {
+      position: absolute;
+      margin-top: 96px;
+      margin-left: 80px;
+
+    }
+
+    #yes-button {
+      background-color: green;
+    }
+    #no-button {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Do you love me?</h1>
+  <img src="dudu.gif" width="120" alt="">
+  <div class="button-container">
+    <button id="yes-button">Yes</button>
+    <button id="no-button">No</button>
+  </div>
+
+  <script>
+    const noButton = document.getElementById("no-button");
+    const yesButton = document.getElementById("yes-button");
+
+    let maxX = window.innerWidth - 100;
+    let maxY = window.innerHeight - 50;
+
+    noButton.addEventListener("mouseenter", () => {
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+
+      noButton.style.left = randomX + "px";
+      noButton.style.top = randomY + "px";
+    });
+
+    yesButton.addEventListener("click", () => {
+      document.body.innerHTML = "<h1 style='color: green;'>I love you too! ❤️ </h1> <br>   <img src='bubu.gif' width='160' alt=''>";
+    });
+
+    // Position the No button initially
+    noButton.style.left = "50%";
+    noButton.style.top = "50%";
+    noButton.style.transform = "translate(-50%, -50%)";
+  </script>
+</body>
+</html>
